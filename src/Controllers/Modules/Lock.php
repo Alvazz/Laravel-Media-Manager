@@ -1,9 +1,9 @@
 <?php
 
-namespace ctf0\MediaManager\Controllers\Moduels;
+namespace alvazz\MediaManager\Controllers\Moduels;
 
 use Illuminate\Http\Request;
-use ctf0\MediaManager\Events\MediaFileOpsNotifications;
+use alvazz\MediaManager\Events\MediaFileOpsNotifications;
 
 trait Lock
 {

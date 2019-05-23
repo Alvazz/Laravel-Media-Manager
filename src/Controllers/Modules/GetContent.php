@@ -1,6 +1,6 @@
 <?php
 
-namespace ctf0\MediaManager\Controllers\Moduels;
+namespace alvazz\MediaManager\Controllers\Moduels;
 
 use Illuminate\Http\Request;
 

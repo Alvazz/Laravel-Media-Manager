@@ -1,12 +1,12 @@
 <?php
 
-namespace ctf0\MediaManager;
+namespace alvazz\MediaManager;
 
 class MediaRoutes
 {
     public static function routes()
     {
-        $controller = config('mediaManager.controller', '\ctf0\MediaManager\Controllers\MediaController');
+        $controller = config('mediaManager.controller', '\alvazz\MediaManager\Controllers\MediaController');
 
         app('router')->group([
             'prefix' => 'media',

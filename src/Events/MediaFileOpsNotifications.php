@@ -1,6 +1,6 @@
 <?php
 
-namespace ctf0\MediaManager\Events;
+namespace alvazz\MediaManager\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;

@@ -16,7 +16,7 @@ return [
     /*
      * manager controller
      */
-    'controller' => '\ctf0\MediaManager\Controllers\MediaController',
+    'controller' => '\alvazz\MediaManager\Controllers\MediaController',
 
     /*
      * remove any file special chars except

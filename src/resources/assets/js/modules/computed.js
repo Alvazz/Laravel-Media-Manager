@@ -88,7 +88,7 @@ export default {
 
         // caching
         CDBN() {
-            return 'ctf0-Media_Manager'
+            return 'alvazz-Media_Manager'
         },
         cacheName() {
             let folders = this.folders

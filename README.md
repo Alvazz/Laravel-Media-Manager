@@ -1,7 +1,7 @@
 <h1 align="center">
     Laravel Media Manager
     <br>
-    <a href="https://packagist.org/packages/ctf0/media-manager"><img src="https://img.shields.io/packagist/v/ctf0/media-manager.svg" alt="Latest Stable Version" /></a> <a href="https://packagist.org/packages/ctf0/media-manager"><img src="https://img.shields.io/packagist/dt/ctf0/media-manager.svg" alt="Total Downloads" /></a>
+    <a href="https://packagist.org/packages/alvazz/media-manager"><img src="https://img.shields.io/packagist/v/alvazz/media-manager.svg" alt="Latest Stable Version" /></a> <a href="https://packagist.org/packages/alvazz/media-manager"><img src="https://img.shields.io/packagist/dt/alvazz/media-manager.svg" alt="Total Downloads" /></a>
     <br>
     <img src="https://badges.herokuapp.com/browsers?firefox=61&amp;microsoftedge=17&amp;googlechrome=51&amp;safari=!?&amp;iexplore=!?" alt="Browser Status" />
 </h1>
@@ -19,25 +19,25 @@
 
 ## Installation
 
-- `composer require ctf0/media-manager`
+- `composer require alvazz/media-manager`
 
 - (Laravel < 5.5) add the service provider to `config/app.php`
 
     ```php
     'providers' => [
-        ctf0\MediaManager\MediaManagerServiceProvider::class,
+        alvazz\MediaManager\MediaManagerServiceProvider::class,
     ]
     ```
 
 - publish the package assets with
 
-    `php artisan vendor:publish --provider="ctf0\MediaManager\MediaManagerServiceProvider"`
+    `php artisan vendor:publish --provider="alvazz\MediaManager\MediaManagerServiceProvider"`
 
 - after installation, package will auto-add
     + package routes to `routes/web.php`
     + package assets compiling to `webpack.mix.js`
 
-- [install dependencies](https://github.com/ctf0/Laravel-Media-Manager/wiki/Packages-In-Use)
+- [install dependencies](https://github.com/alvazz/Laravel-Media-Manager/wiki/Packages-In-Use)
 
     ```bash
     yarn add vue vue-ls vue-async-computed vue-list-rendered vue-image-compare2 vue-tippy@v1 vue2-filters vue-input-autowidth vue-notif vue-clipboard2 vue-awesome@v2 vue-touch@next idb-keyval axios dropzone cropperjs keycode date-fns lottie-web plyr fuse.js
@@ -46,7 +46,7 @@
     ```
 
 - add this one liner to your main js file and run `npm run watch` to compile your `js/css` files.
-    + if you are having issues [Check](https://ctf0.wordpress.com/2017/09/12/laravel-mix-es6/).
+    + if you are having issues [Check](https://alvazz.wordpress.com/2017/09/12/laravel-mix-es6/).
     ```js
     // app.js
 
@@ -65,7 +65,7 @@
 
 ## Features
 
-- [image editor](https://github.com/ctf0/Laravel-Media-Manager/wiki/Image-Editor)
+- [image editor](https://github.com/alvazz/Laravel-Media-Manager/wiki/Image-Editor)
 - multi
     + upload
     + move/copy
@@ -76,22 +76,22 @@
     + click & hold on an empty area **"items container"**
 - toggle between `random/original` names for uploaded files
 - upload an image from a url
-- [load image on demand](https://github.com/ctf0/Laravel-Media-Manager/wiki/Caching-Strategies#cache-api-image-offline-caching)
-- [cache requests](https://github.com/ctf0/Laravel-Media-Manager/wiki/Caching-Strategies)
-- [asynchronous Updates](https://github.com/ctf0/Laravel-Media-Manager/wiki/Async-Update-The-Manager)
+- [load image on demand](https://github.com/alvazz/Laravel-Media-Manager/wiki/Caching-Strategies#cache-api-image-offline-caching)
+- [cache requests](https://github.com/alvazz/Laravel-Media-Manager/wiki/Caching-Strategies)
+- [asynchronous Updates](https://github.com/alvazz/Laravel-Media-Manager/wiki/Async-Update-The-Manager)
 - bulk selection
 - change item/s visibility
 - update the page url while navigation
 - show audio files info **"artist, album, year, etc.."**
-- dynamically hide [files](https://github.com/ctf0/Laravel-Media-Manager/wiki/Hide-Files-With-Extension) / [folders](https://github.com/ctf0/Laravel-Media-Manager/wiki/Hide-Folders)
-- [restrict access to path](https://github.com/ctf0/Laravel-Media-Manager/wiki/Restrict-Access-To-Path)
-- download selected ["including bulk selection"](https://github.com/ctf0/Laravel-Media-Manager/wiki/Download-Files-as-a-ZipFile)
+- dynamically hide [files](https://github.com/alvazz/Laravel-Media-Manager/wiki/Hide-Files-With-Extension) / [folders](https://github.com/alvazz/Laravel-Media-Manager/wiki/Hide-Folders)
+- [restrict access to path](https://github.com/alvazz/Laravel-Media-Manager/wiki/Restrict-Access-To-Path)
+- download selected ["including bulk selection"](https://github.com/alvazz/Laravel-Media-Manager/wiki/Download-Files-as-a-ZipFile)
 - directly copy selected file link
 - use the manager
-        + [from modal](https://github.com/ctf0/Laravel-Media-Manager/wiki/Use-The-Manager-From-A-Modal)
-        + [with any wysiwyg editor](https://github.com/ctf0/Laravel-Media-Manager/wiki/Use-The-Manager-With-Any-WYSIWYG-Editor)
+        + [from modal](https://github.com/alvazz/Laravel-Media-Manager/wiki/Use-The-Manager-From-A-Modal)
+        + [with any wysiwyg editor](https://github.com/alvazz/Laravel-Media-Manager/wiki/Use-The-Manager-With-Any-WYSIWYG-Editor)
 - auto scroll to selected item using **"left, up, right, down, home, end"**
-- [lock/unlock](https://github.com/ctf0/Laravel-Media-Manager/wiki/Lock-Files-&-Folder) item/s.
+- [lock/unlock](https://github.com/alvazz/Laravel-Media-Manager/wiki/Lock-Files-&-Folder) item/s.
 - search in the current folder **or** globally through the entire collection.
 - filter by
     + folder
@@ -188,9 +188,9 @@
 
 [js]: https://github.com/gocanto/vuemit
 [lara]: https://laravel.com/docs/5.5/events#manually-registering-events
-[event]: https://github.com/ctf0/Laravel-Media-Manager/wiki/Image-Editor#optimize-edited-images-on-save
-[path]: https://gist.github.com/ctf0/9fa6013954654384052d2e2e809b9bf6
-[modal]: https://github.com/ctf0/Laravel-Media-Manager/wiki/Use-The-Manager-From-A-Modal
+[event]: https://github.com/alvazz/Laravel-Media-Manager/wiki/Image-Editor#optimize-edited-images-on-save
+[path]: https://gist.github.com/alvazz/9fa6013954654384052d2e2e809b9bf6
+[modal]: https://github.com/alvazz/Laravel-Media-Manager/wiki/Use-The-Manager-From-A-Modal
 
 <br>
 
@@ -212,7 +212,7 @@ return [
     /*
      * manager controller
      */
-    'controller' => '\ctf0\MediaManager\Controllers\MediaController',
+    'controller' => '\alvazz\MediaManager\Controllers\MediaController',
 
     /*
      * remove any file special chars except
@@ -295,7 +295,7 @@ return [
 
 ## Usage
 
-> [Wiki](https://github.com/ctf0/Laravel-Media-Manager/wiki)<br>
-> [Demo](https://github.com/ctf0/demos/tree/media-manager)
+> [Wiki](https://github.com/alvazz/Laravel-Media-Manager/wiki)<br>
+> [Demo](https://github.com/alvazz/demos/tree/media-manager)
 
 - visit `localhost:8000/media`

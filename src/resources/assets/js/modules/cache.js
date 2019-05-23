@@ -4,7 +4,7 @@ import uniq from 'lodash/uniq'
 
 import {Store, get, set, del, clear, keys} from 'idb-keyval'
 const cacheStore = new Store(
-    'ctf0-Media_Manager',   // db
+    'alvazz-Media_Manager',   // db
     'laravel-media-manager' // store
 )
 

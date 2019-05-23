@@ -1,11 +1,11 @@
 <?php
 
-namespace ctf0\MediaManager\Controllers\Moduels;
+namespace alvazz\MediaManager\Controllers\Moduels;
 
 use ZipStream\ZipStream;
 use Illuminate\Http\Request;
 use ZipStream\Option\Archive;
-use ctf0\MediaManager\Events\MediaZipProgress;
+use alvazz\MediaManager\Events\MediaZipProgress;
 
 trait Download
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ctf0\MediaManager\Events;
+namespace alvazz\MediaManager\Events;
 
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;

@@ -1,19 +1,19 @@
 <?php
 
-namespace ctf0\MediaManager\Controllers;
+namespace alvazz\MediaManager\Controllers;
 
 use App\Http\Controllers\Controller;
 use League\Flysystem\Plugin\ListWith;
-use ctf0\MediaManager\Controllers\Moduels\Lock;
-use ctf0\MediaManager\Controllers\Moduels\Move;
-use ctf0\MediaManager\Controllers\Moduels\Utils;
-use ctf0\MediaManager\Controllers\Moduels\Delete;
-use ctf0\MediaManager\Controllers\Moduels\Rename;
-use ctf0\MediaManager\Controllers\Moduels\Upload;
-use ctf0\MediaManager\Controllers\Moduels\Download;
-use ctf0\MediaManager\Controllers\Moduels\NewFolder;
-use ctf0\MediaManager\Controllers\Moduels\GetContent;
-use ctf0\MediaManager\Controllers\Moduels\Visibility;
+use alvazz\MediaManager\Controllers\Moduels\Lock;
+use alvazz\MediaManager\Controllers\Moduels\Move;
+use alvazz\MediaManager\Controllers\Moduels\Utils;
+use alvazz\MediaManager\Controllers\Moduels\Delete;
+use alvazz\MediaManager\Controllers\Moduels\Rename;
+use alvazz\MediaManager\Controllers\Moduels\Upload;
+use alvazz\MediaManager\Controllers\Moduels\Download;
+use alvazz\MediaManager\Controllers\Moduels\NewFolder;
+use alvazz\MediaManager\Controllers\Moduels\GetContent;
+use alvazz\MediaManager\Controllers\Moduels\Visibility;
 
 class MediaController extends Controller
 {

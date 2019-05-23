@@ -1,10 +1,10 @@
 <?php
 
-namespace ctf0\MediaManager;
+namespace alvazz\MediaManager;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;
-use ctf0\PackageChangeLog\PackageChangeLogServiceProvider;
+use alvazz\PackageChangeLog\PackageChangeLogServiceProvider;
 
 class MediaManagerServiceProvider extends ServiceProvider
 {
@@ -132,7 +132,7 @@ class MediaManagerServiceProvider extends ServiceProvider
         $search     = 'MediaManager';
 
         if ($this->checkExist($route_file, $search)) {
-            $data = "\n// MediaManager\nctf0\MediaManager\MediaRoutes::routes();";
+            $data = "\n// MediaManager\nalvazz\MediaManager\MediaRoutes::routes();";
 
             $this->file->append($route_file, $data);
         }

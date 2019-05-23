@@ -1,10 +1,10 @@
 {
-    "name": "ctf0/media-manager",
+    "name": "alvazz/media-manager",
     "description": "A Media Manager Built With Vuejs & Laravel",
-    "homepage": "https://github.com/ctf0/Laravel-Media-Manager",
+    "homepage": "https://github.com/alvazz/Laravel-Media-Manager",
     "license": "MIT",
     "keywords": [
-        "ctf0",
+        "alvazz",
         "media",
         "manager",
         "laravel",
@@ -13,28 +13,27 @@
     ],
     "authors": [
        {
-           "name": "Muah",
-           "email": "muah003@gmail.com"
+           "name": "alvazz",
+           "email": "alvazzzzzzzzzzz@gmail.com"
        }
    ],
     "require": {
         "php" : "~7.0",
         "illuminate/support": "5.4 - 5.8",
-        "maennchen/zipstream-php": "~1.0",
-        "ctf0/package-changelog": "*"
+        "maennchen/zipstream-php": "~1.0"
     },
     "suggest": {
         "league/flysystem-cached-adapter": "Required to use the Flysystem cache (~1.0)."
     },
     "autoload": {
         "psr-4": {
-            "ctf0\\MediaManager\\": "src"
+            "alvazz\\MediaManager\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ctf0\\MediaManager\\MediaManagerServiceProvider"
+                "alvazz\\MediaManager\\MediaManagerServiceProvider"
             ]
         },
         "changeLog": "logs"
@@ -44,7 +43,7 @@
     },
     "scripts": {
         "post-package-install": [
-            "@php artisan vendor:publish --provider=\"ctf0\\MediaManager\\MediaManagerServiceProvider\""
+            "@php artisan vendor:publish --provider=\"alvazz\\MediaManager\\MediaManagerServiceProvider\""
         ]
     }
 }
