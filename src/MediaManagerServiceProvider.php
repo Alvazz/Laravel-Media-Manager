@@ -4,7 +4,7 @@ namespace alvazz\MediaManager;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;
-use alvazz\PackageChangeLog\PackageChangeLogServiceProvider;
+//use alvazz\PackageChangeLog\PackageChangeLogServiceProvider;
 
 class MediaManagerServiceProvider extends ServiceProvider
 {
@@ -179,6 +179,6 @@ EOT;
      */
     public function register()
     {
-        $this->app->register(PackageChangeLogServiceProvider::class);
+        //$this->app->register(PackageChangeLogServiceProvider::class);
     }
 }

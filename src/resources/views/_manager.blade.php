@@ -131,7 +131,7 @@
                                     <span>{{ trans('MediaManager::messages.rename.main') }}</span>
                                 </button>
                             </div>
-
+                            
                             {{-- editor --}}
                             {{-- <div class="control" v-show="!isBulkSelecting()">
                                 <button class="button is-link"
