@@ -131,7 +131,7 @@
                                     <span>{{ trans('MediaManager::messages.rename.main') }}</span>
                                 </button>
                             </div>
-                            
+
                             {{-- editor --}}
                             {{-- <div class="control" v-show="!isBulkSelecting()">
                                 <button class="button is-link"
@@ -178,9 +178,9 @@
                                     </span>
                                 </v-touch>
                             </div>
-
+                             
                             {{-- lock --}}
-                            <div class="control">
+                            {{-- <div class="control">
                                 <button class="button is-warning"
                                     ref="lock"
                                     :disabled="lock_btn()"
@@ -191,10 +191,10 @@
                                         <icon :name="IsLocked(selectedFile) ? 'lock' : 'unlock'"></icon>
                                     </span>
                                 </button>
-                            </div>
+                            </div> --}}
 
                             {{-- visibility --}}
-                            <div class="control">
+                            {{-- <div class="control">
                                 <button class="button"
                                     :class="IsVisible(selectedFile) ? 'is-light' : 'is-danger'"
                                     ref="vis"
@@ -206,7 +206,7 @@
                                         <icon :name="IsVisible(selectedFile) ? 'eye' : 'eye-slash'"></icon>
                                     </span>
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
