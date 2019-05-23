@@ -133,7 +133,7 @@
                             </div>
 
                             {{-- editor --}}
-                            <div class="control" v-show="!isBulkSelecting()">
+                            {{-- <div class="control" v-show="!isBulkSelecting()">
                                 <button class="button is-link"
                                     ref="editor"
                                     :disabled="item_ops() || !selectedFileIs('image') || isLoading"
@@ -143,7 +143,7 @@
                                     <span class="icon"><icon name="object-ungroup" scale="1.2"></icon></span>
                                     <span>{{ trans('MediaManager::messages.editor.main') }}</span>
                                 </button>
-                            </div>
+                            </div> --}}
 
                             {{-- delete --}}
                             <div class="control">
