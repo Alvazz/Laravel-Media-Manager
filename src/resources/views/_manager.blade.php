@@ -539,14 +539,14 @@
                                 @dbltap="pressGesture($event, file, index)">
 
                                 {{-- lock file --}}
-                                <button v-if="$refs.lock"
+                                {{-- <button v-if="$refs.lock"
                                     class="__box-lock-icon icon"
                                     :disabled="isLoading"
                                     :class="IsLocked(file) ? 'is-danger' : 'is-success'"
                                     :title="IsLocked(file) ? '{{ trans('MediaManager::messages.unlock') }}': '{{ trans('MediaManager::messages.lock') }}'"
                                     v-tippy="{arrow: true, hideOnClick: false}"
                                     @click.stop="$refs.lock.click()">
-                                </button>
+                                </button> --}}
 
                                 {{-- copy file link --}}
                                 <div v-if="!fileTypeIs(file, 'folder')"
