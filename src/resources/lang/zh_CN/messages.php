@@ -99,7 +99,7 @@ return array(
     ),
     'no_files_in_folder' => '此文件夹中没有文件',
     'no_val' => '或许您应该先添加些文件',
-    'non' => '未知',
+    'non' => '默认',
     'not_allowed_file_ext' => '该类型 ":attr" 文件不允许',
     'nothing_found' => '什么也没有',
     'open' => '打开',
