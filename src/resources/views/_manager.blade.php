@@ -260,7 +260,7 @@
                         <div class="level-item" v-show="searchItemsCount != 0">
                             <div class="control">
                                 <div class="field has-addons">
-                                    <div class="control">
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('image')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.filter_by', ['attr' => trans('MediaManager::messages.image')]) }}"
@@ -299,8 +299,8 @@
                                             :disabled="!btnFilter('folder') || isLoading">
                                             <span class="icon"><icon name="folder"></icon></span>
                                         </button>
-                                    </div>
-                                    <div class="control">
+                                    </div> --}}
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('text')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.filter_by', ['attr' => trans('MediaManager::messages.text')]) }}"
@@ -309,8 +309,8 @@
                                             :disabled="!btnFilter('text') || isLoading">
                                             <span class="icon"><icon name="file-text-o"></icon></span>
                                         </button>
-                                    </div>
-                                    <div class="control">
+                                    </div> --}}
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('application')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.filter_by', ['attr' => trans('MediaManager::messages.application')]) }}"
@@ -319,7 +319,7 @@
                                             :disabled="!btnFilter('application') || isLoading">
                                             <span class="icon"><icon name="cogs"></icon></span>
                                         </button>
-                                    </div>
+                                    </div> --}}
                                     {{-- <div class="control">
                                         <button @click="showFilesOfType('locked')"
                                             v-tippy
@@ -330,7 +330,7 @@
                                             <span class="icon"><icon name="key"></icon></span>
                                         </button>
                                     </div> --}}
-                                    <div class="control">
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('selected')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.filter_by', ['attr' => trans('MediaManager::messages.select.selected')]) }}"
@@ -339,9 +339,9 @@
                                             :disabled="!btnFilter('selected') || isLoading">
                                             <span class="icon"><icon name="check"></icon></span>
                                         </button>
-                                    </div>
+                                    </div> --}}
                                     {{-- clear --}}
-                                    <div class="control">
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('all')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.clear', ['attr' => trans('MediaManager::messages.filter')]) }}"
@@ -350,7 +350,7 @@
                                             :disabled="!btnFilter('all') || isLoading">
                                             <span class="icon"><icon name="times"></icon></span>
                                         </button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
