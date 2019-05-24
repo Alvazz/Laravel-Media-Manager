@@ -785,7 +785,7 @@
 
                                     {{-- folder --}}
                                     <template v-if="selectedFileIs('folder')">
-                                        <table>
+                                        {{-- <table>
                                             <tr>
                                                 <td class="t-key">{{ trans('MediaManager::messages.items') }}:</td>
                                                 <td class="t-val">@{{ selectedFile.count }}</td>
@@ -808,7 +808,7 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>
+                                        </div> --}}
                                     </template>
 
                                     {{-- file --}}
