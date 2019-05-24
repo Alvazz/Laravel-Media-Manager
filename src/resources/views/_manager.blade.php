@@ -646,14 +646,14 @@
                                             @click="isBulkSelecting() ? false : toggleModal('preview_modal')"/>
                                     </div>
 
-                                    <transition :name="scrollableBtn.state ? 'mm-img-nxt': 'mm-img-prv'" appear>
+                                    {{-- <transition :name="scrollableBtn.state ? 'mm-img-nxt': 'mm-img-prv'" appear>
                                         <div class="image-scroll-btn"
                                             :class="scrollableBtn.dir"
                                             v-show="scrollableBtn.state"
                                             @click="scrollImg('img-prev')">
                                             <span class="icon is-large"><icon name="chevron-down" scale="1"></icon></span>
                                         </div>
-                                    </transition>
+                                    </transition> --}}
                                 </div>
 
                                 {{-- video --}}

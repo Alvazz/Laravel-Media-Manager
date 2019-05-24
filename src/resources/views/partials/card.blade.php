@@ -57,14 +57,14 @@
                 </a>
             </div>
 
-            <transition :name="scrollableBtn.state ? 'mm-img-nxt': 'mm-img-prv'" appear>
+            {{-- <transition :name="scrollableBtn.state ? 'mm-img-nxt': 'mm-img-prv'" appear>
                 <div class="image-scroll-btn"
                     :class="scrollableBtn.dir"
                     v-show="scrollableBtn.state"
                     @click="scrollImg('img-card-prev')">
                     <span class="icon is-large"><icon name="chevron-down" scale="1"></icon></span>
                 </div>
-            </transition>
+            </transition> --}}
         </div>
     </div>
 
@@ -169,14 +169,14 @@
         </div>
 
         {{-- editor --}}
-        <div class="card-footer-item" v-if="selectedFileIs('image')">
+        {{-- <div class="card-footer-item" v-if="selectedFileIs('image')">
             <button class="button btn-plain is-fullwidth"
                 :disabled="item_ops() || isLoading"
                 @click="imageEditorCard()">
                 <span class="icon"><icon name="object-ungroup" scale="1.2"></icon></span>
                 <span>{{ trans('MediaManager::messages.editor.main') }}</span>
             </button>
-        </div>
+        </div> --}}
 
         {{-- delete --}}
         <div class="card-footer-item">

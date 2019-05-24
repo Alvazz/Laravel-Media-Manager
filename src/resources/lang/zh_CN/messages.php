@@ -73,7 +73,7 @@ return array(
     ),
     'filter' => '滤镜',
     'filter_by' => '滤波器 :attr',
-    'find' => '寻找...',
+    'find' => '搜索...',
     'folder' => '文件夹',
     'found' => '找到',
     'go_to_folder' => '转到文件夹',
@@ -125,7 +125,7 @@ return array(
     'select' => array(
         'all' => '选择全部',
         'bulk' => '批量选择',
-        'non' => '反选',
+        'non' => '取消选择',
         'nothing' => '未选择文件或文件夹',
         'selected' => '已选择',
     ),
