@@ -456,7 +456,78 @@
         {{-- ====================================================================== --}}
 
         {{-- mobile breadCrumb --}}
-        @include('MediaManager::partials.mobile-nav')
+        {{-- @include('MediaManager::partials.mobile-nav') --}}
+        {{-- path toolbar --}}
+            <section class="__stack-breadcrumb level is-mobile">
+                {{-- directories breadCrumb --}}
+                <div class="level-left">
+                    <nav class="breadcrumb has-arrow-separator is-hidden-touch" v-if="!restrictModeIsOn()">
+                        <transition-group tag="ul" name="mm-list" mode="out-in">
+                            <li key="library-bc">
+                                <a v-if="folders.length > 0 && !(isBulkSelecting() || isLoading)"
+                                    class="p-l-0 level"
+                                    v-tippy
+                                    title="backspace"
+                                    @click="goToFolder(0)">
+                                    <span class="icon level-item is-marginless"><icon name="map"></icon></span>
+                                    <span class="level-item m-l-5 is-marginless">{{ trans('MediaManager::messages.library') }}</span>
+                                </a>
+                                <p v-else class="p-l-0 level">
+                                    <span class="icon level-item is-marginless"><icon name="map-o"></icon></span>
+                                    <span class="level-item m-l-5 is-marginless">{{ trans('MediaManager::messages.library') }}</span>
+                                </p>
+                            </li>
+
+                            <li v-for="(folder, index) in folders" :key="`${index}-${folder}`">
+                                <p v-if="isLastItem(folder, folders) || isBulkSelecting() || isLoading"
+                                    class="level">
+                                    <span class="icon level-item is-marginless"><icon name="folder-open-o"></icon></span>
+                                    <span class="level-item m-l-5 is-marginless">@{{ folder }}</span>
+                                </p>
+                                <a v-else
+                                    v-tippy
+                                    title="backspace"
+                                    class="level"
+                                    @click="folders.length > 1 ? goToFolder(index+1) : false">
+                                    <span class="icon level-item is-marginless"><icon name="folder"></icon></span>
+                                    <span class="level-item m-l-5 is-marginless">@{{ folder }}</span>
+                                </a>
+                            </li>
+                        </transition-group>
+                    </nav>
+                </div>
+
+                {{-- toggle sidebar --}}
+                <div class="level-right" v-show="!isLoading">
+                    <div class="is-hidden-touch"
+                        @click="toggleInfoSidebar(), saveUserPref()"
+                        v-tippy
+                        title="t"
+                        v-if="allItemsCount">
+                        <transition :name="infoSidebar ? 'mm-info-out' : 'mm-info-in'" mode="out-in">
+                            <div :key="infoSidebar ? 1 : 2" class="__stack-sidebar-toggle has-text-link">
+                                <template v-if="infoSidebar">
+                                    <span>{{ trans('MediaManager::messages.close') }}</span>
+                                    <span class="icon"><icon name="angle-double-right"></icon></span>
+                                </template>
+                                <template v-else>
+                                    <span>{{ trans('MediaManager::messages.open') }}</span>
+                                    <span class="icon"><icon name="angle-double-left"></icon></span>
+                                </template>
+                            </div>
+                        </transition>
+                    </div>
+
+                    {{-- show/hide toolbar --}}
+                    <div class="is-hidden-desktop">
+                        <button class="button is-link __stack-left-toolbarToggle" @click="toolBar = !toolBar">
+                            <span class="icon"><icon :name="toolBar ? 'times' : 'bars'"></icon></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
 
         {{-- ====================================================================== --}}
 
@@ -913,78 +984,8 @@
             </section>
 
             {{-- ====================================================================== --}}
-
-            {{-- path toolbar --}}
-            <section class="__stack-breadcrumb level is-mobile">
-                {{-- directories breadCrumb --}}
-                <div class="level-left">
-                    <nav class="breadcrumb has-arrow-separator is-hidden-touch" v-if="!restrictModeIsOn()">
-                        <transition-group tag="ul" name="mm-list" mode="out-in">
-                            <li key="library-bc">
-                                <a v-if="folders.length > 0 && !(isBulkSelecting() || isLoading)"
-                                    class="p-l-0 level"
-                                    v-tippy
-                                    title="backspace"
-                                    @click="goToFolder(0)">
-                                    <span class="icon level-item is-marginless"><icon name="map"></icon></span>
-                                    <span class="level-item m-l-5 is-marginless">{{ trans('MediaManager::messages.library') }}</span>
-                                </a>
-                                <p v-else class="p-l-0 level">
-                                    <span class="icon level-item is-marginless"><icon name="map-o"></icon></span>
-                                    <span class="level-item m-l-5 is-marginless">{{ trans('MediaManager::messages.library') }}</span>
-                                </p>
-                            </li>
-
-                            <li v-for="(folder, index) in folders" :key="`${index}-${folder}`">
-                                <p v-if="isLastItem(folder, folders) || isBulkSelecting() || isLoading"
-                                    class="level">
-                                    <span class="icon level-item is-marginless"><icon name="folder-open-o"></icon></span>
-                                    <span class="level-item m-l-5 is-marginless">@{{ folder }}</span>
-                                </p>
-                                <a v-else
-                                    v-tippy
-                                    title="backspace"
-                                    class="level"
-                                    @click="folders.length > 1 ? goToFolder(index+1) : false">
-                                    <span class="icon level-item is-marginless"><icon name="folder"></icon></span>
-                                    <span class="level-item m-l-5 is-marginless">@{{ folder }}</span>
-                                </a>
-                            </li>
-                        </transition-group>
-                    </nav>
-                </div>
-
-                {{-- toggle sidebar --}}
-                <div class="level-right" v-show="!isLoading">
-                    <div class="is-hidden-touch"
-                        @click="toggleInfoSidebar(), saveUserPref()"
-                        v-tippy
-                        title="t"
-                        v-if="allItemsCount">
-                        <transition :name="infoSidebar ? 'mm-info-out' : 'mm-info-in'" mode="out-in">
-                            <div :key="infoSidebar ? 1 : 2" class="__stack-sidebar-toggle has-text-link">
-                                <template v-if="infoSidebar">
-                                    <span>{{ trans('MediaManager::messages.close') }}</span>
-                                    <span class="icon"><icon name="angle-double-right"></icon></span>
-                                </template>
-                                <template v-else>
-                                    <span>{{ trans('MediaManager::messages.open') }}</span>
-                                    <span class="icon"><icon name="angle-double-left"></icon></span>
-                                </template>
-                            </div>
-                        </transition>
-                    </div>
-
-                    {{-- show/hide toolbar --}}
-                    <div class="is-hidden-desktop">
-                        <button class="button is-link __stack-left-toolbarToggle" @click="toolBar = !toolBar">
-                            <span class="icon"><icon :name="toolBar ? 'times' : 'bars'"></icon></span>
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </div>
-
+            {{-- path bar here --}}
+            
         {{-- ====================================================================== --}}
 
         {{-- modals --}}
