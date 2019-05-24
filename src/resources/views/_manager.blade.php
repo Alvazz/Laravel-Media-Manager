@@ -456,7 +456,7 @@
         {{-- ====================================================================== --}}
 
         {{-- mobile breadCrumb --}}
-        {{-- @include('MediaManager::partials.mobile-nav') --}}
+        @include('MediaManager::partials.mobile-nav')
         {{-- path toolbar --}}
             <section class="__stack-breadcrumb level is-mobile">
                 {{-- directories breadCrumb --}}
