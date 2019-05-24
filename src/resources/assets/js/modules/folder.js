@@ -40,9 +40,9 @@ export default {
             e && e.target.classList.contains(cls) ? run() : run()
         },
 
-        // misc
+        // misc FIXME
         updateMoveList() {
-            this.moveToPath = this.$refs.move_folder_dropdown.options[0].value
+            //this.moveToPath = this.$refs.move_folder_dropdown.options[0].value
         },
 
         // filter

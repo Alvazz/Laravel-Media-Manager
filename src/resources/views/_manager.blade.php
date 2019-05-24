@@ -594,11 +594,11 @@
                                         {{-- folder --}}
                                         <template v-if="fileTypeIs(file, 'folder')">
                                             
-                                            {{-- <h4>@{{ file.name }}</h4>
+                                            <h4>@{{ file.name }}</h4>
                                             <small>
                                                 <span>@{{ file.count }} {{ trans('MediaManager::messages.items') }}</span>
                                                 <span v-if="file.size > 0" class="__info-file-size">"@{{ getFileSize(file.size) }}"</span>
-                                            </small> --}}
+                                            </small>
                                         </template>
 
                                         {{-- any other --}}
