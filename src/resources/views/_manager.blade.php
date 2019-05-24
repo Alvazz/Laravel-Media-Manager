@@ -320,7 +320,7 @@
                                             <span class="icon"><icon name="cogs"></icon></span>
                                         </button>
                                     </div>
-                                    <div class="control">
+                                    {{-- <div class="control">
                                         <button @click="showFilesOfType('locked')"
                                             v-tippy
                                             title="{{ trans('MediaManager::messages.filter_by', ['attr' => trans('MediaManager::messages.locked')]) }}"
@@ -329,7 +329,7 @@
                                             :disabled="!btnFilter('locked') || isLoading">
                                             <span class="icon"><icon name="key"></icon></span>
                                         </button>
-                                    </div>
+                                    </div> --}}
                                     <div class="control">
                                         <button @click="showFilesOfType('selected')"
                                             v-tippy
@@ -376,14 +376,14 @@
                         <div class="level-item">
                             <div class="control">
                                 <div class="field has-addons">
-                                    <p class="control" v-if="!restrictModeIsOn()">
+                                    {{-- <p class="control" v-if="!restrictModeIsOn()">
                                         <global-search-btn
                                             route="{{ route('media.global_search') }}"
                                             :is-loading="isLoading"
                                             :trans="trans"
                                             :show-notif="showNotif">
                                         </global-search-btn>
-                                    </p>
+                                    </p> --}}
 
                                     <p class="control has-icons-left">
                                         <input class="input"
@@ -593,11 +593,12 @@
                                     <div class="__box-info">
                                         {{-- folder --}}
                                         <template v-if="fileTypeIs(file, 'folder')">
-                                            <h4>@{{ file.name }}</h4>
+                                            
+                                            {{-- <h4>@{{ file.name }}</h4>
                                             <small>
                                                 <span>@{{ file.count }} {{ trans('MediaManager::messages.items') }}</span>
                                                 <span v-if="file.size > 0" class="__info-file-size">"@{{ getFileSize(file.size) }}"</span>
-                                            </small>
+                                            </small> --}}
                                         </template>
 
                                         {{-- any other --}}
