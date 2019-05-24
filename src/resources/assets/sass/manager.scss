@@ -163,7 +163,7 @@
 
     &::before {
         position: absolute;
-        top: 20px;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
@@ -261,6 +261,7 @@
     margin: 0 !important;
     padding: 0.75rem;
     border-top: 1px solid darken($active_theme, 5%);
+    border-bottom: 1px solid darken($active_theme, 5%);
     background: $active_theme;
 
     .breadcrumb {
