@@ -20,7 +20,7 @@ return array(
     ),
     'cancel' => '取消',
     'clear' => '取消 :attr',
-    'close' => '关闭',
+    'close' => '关闭侧栏',
     'copy' => array(
         'copied' => '拷贝',
         'file_folder' => '拷贝文件或文件夹',
@@ -102,7 +102,7 @@ return array(
     'non' => '默认',
     'not_allowed_file_ext' => '该类型 ":attr" 文件不允许',
     'nothing_found' => '什么也没有',
-    'open' => '打开',
+    'open' => '打开侧栏',
     'pdf' => '您的浏览器不支持浏览PDF文件，请下载打开',
     'preview' => '预览',
     'public_url' => '公共访问地址',

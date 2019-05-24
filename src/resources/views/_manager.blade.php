@@ -151,7 +151,7 @@
                                     ref="delete"
                                     :disabled="item_ops() || isLoading"
                                     v-tippy
-                                    title="d / del"
+                                    title="删除(d)"
                                     @click="deleteItem()">
                                     <span class="icon"><icon name="trash"></icon></span>
                                     <span>{{ trans('MediaManager::messages.delete.main') }}</span>
@@ -170,7 +170,7 @@
                                     :disabled="isLoading"
                                     tag="button"
                                     v-tippy
-                                    title="(R) efresh"
+                                    title="刷新(R)"
                                     @tap="refresh()"
                                     @hold="clearAll()">
                                     <span class="icon">
