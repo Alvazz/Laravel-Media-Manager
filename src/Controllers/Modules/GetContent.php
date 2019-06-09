@@ -3,6 +3,7 @@
 namespace alvazz\MediaManager\Controllers\Moduels;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 trait GetContent
 {
@@ -58,6 +59,8 @@ trait GetContent
         // dd(count($storageFiles));
         $storageFolders = $this->getFolderListByType($dirList, 'dir');
         $pattern        = $this->ignoreFiles;
+
+        Log::info('storageFiles count: '.count($storageFiles));
 
         // foreach ($storageFolders as $folder) {
         //     $path = $folder['path'];
