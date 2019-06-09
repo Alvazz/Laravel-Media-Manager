@@ -165,10 +165,10 @@ export default {
                         }
 
                         // cache response
-                        this.cacheResponse({
-                            files: data.files,
-                            dirs: data.dirs
-                        })
+                        // this.cacheResponse({
+                        //     files: data.files,
+                        //     dirs: data.dirs
+                        // })
 
                         // return data
                         this.files = data.files

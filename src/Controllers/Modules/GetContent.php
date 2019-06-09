@@ -31,6 +31,8 @@ trait GetContent
                 'path'  => $folder,
                 'items' => $this->getData($folder),
             ],
+            'total' => $this->getFolderInfoFromList($folder),
+            'current_page' => 1,
         ]);
     }
 
@@ -137,18 +139,13 @@ trait GetContent
 
     protected function getFolderListByType($list, $type)
     {
-        $list   = collect($list)->where('type', $type)->forPage(1, 100);
+        // $list   = collect($list)->where('type', $type);
+        $list   = collect($list)->where('type', $type);
+
         Log::info('list --> : '.$list);
         
         $sortBy = $list->pluck('basename')->values()->all();
-        //$sortBy = $list->pluck('basename')->values()->forPage(1, 100)->get();
-        // $sortBy->all();
-
-         $items  = $list->values()->all();
-        
-        //$items  = $list->values()->forPage(1, 100)->get();
-
-        // $items->all();
+        $items  = $list->values()->all();
         
         array_multisort($sortBy, SORT_NATURAL, $items);
 
