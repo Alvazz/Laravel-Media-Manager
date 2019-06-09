@@ -139,11 +139,17 @@ trait GetContent
     {
         $list   = collect($list)->where('type', $type);
         Log::info('list --> : '.$list);
-        $sortBy = $list->pluck('basename')->values()->all();
-        Log::info('sortBy --> : '.$sortBy);
-        $items  = $list->values()->all();
-        Log::info('items --> : '.$items);
+        
+        // $sortBy = $list->pluck('basename')->values()->all();
+        $sortBy = $list->pluck('basename')->values()->forPage(1, 100);
+        $sortBy->all();
 
+        // $items  = $list->values()->all();
+        
+        $items  = $list->values()->forPage(1, 100);
+
+        $items->all();
+        
         array_multisort($sortBy, SORT_NATURAL, $items);
 
         return $items;
