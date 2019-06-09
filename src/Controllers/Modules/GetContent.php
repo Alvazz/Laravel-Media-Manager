@@ -62,26 +62,26 @@ trait GetContent
 
         Log::info('storageFiles count: '.count($storageFiles));
 
-        // foreach ($storageFolders as $folder) {
-        //     $path = $folder['path'];
-        //     $time = $folder['timestamp'];
+        foreach ($storageFolders as $folder) {
+            $path = $folder['path'];
+            $time = $folder['timestamp'];
 
-        //     if (!preg_grep($pattern, [$path])) {
-        //         if ($this->GFI) {
-        //             $info = $this->getFolderInfo($path);
-        //         }
+            if (!preg_grep($pattern, [$path])) {
+                if ($this->GFI) {
+                    $info = $this->getFolderInfo($path);
+                }
 
-        //         $list[] = [
-        //             'name'                   => $folder['basename'],
-        //             'type'                   => 'folder',
-        //             'path'                   => $this->resolveUrl($path),
-        //             'size'                   => isset($info) ? $info['size'] : 0,
-        //             'count'                  => isset($info) ? $info['count'] : 0,
-        //             'last_modified'          => $time,
-        //             'last_modified_formated' => $this->getItemTime($time),
-        //         ];
-        //     }
-        // }
+                $list[] = [
+                    'name'                   => $folder['basename'],
+                    'type'                   => 'folder',
+                    'path'                   => $this->resolveUrl($path),
+                    'size'                   => isset($info) ? $info['size'] : 0,
+                    'count'                  => isset($info) ? $info['count'] : 0,
+                    'last_modified'          => $time,
+                    'last_modified_formated' => $this->getItemTime($time),
+                ];
+            }
+        }
 
         // foreach ($storageFiles as $file) {
         //     $path = $file['path'];
