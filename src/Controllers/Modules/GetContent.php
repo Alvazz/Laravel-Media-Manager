@@ -55,7 +55,7 @@ trait GetContent
         $list           = [];
         $dirList        = $this->getFolderContent($dir);
         $storageFiles   = $this->getFolderListByType($dirList, 'file');
-        var_dump($storageFiles->count());
+        var_dump(count($storageFiles));
         $storageFolders = $this->getFolderListByType($dirList, 'dir');
         $pattern        = $this->ignoreFiles;
 
