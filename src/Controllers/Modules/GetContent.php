@@ -140,13 +140,13 @@ trait GetContent
         $list   = collect($list)->where('type', $type);
         Log::info('list --> : '.$list);
         
-        // $sortBy = $list->pluck('basename')->values()->all();
-        $sortBy = $list->pluck('basename')->values()->forPage(1, 100)->get();
+        $sortBy = $list->pluck('basename')->values()->all();
+        //$sortBy = $list->pluck('basename')->values()->forPage(1, 100)->get();
         // $sortBy->all();
 
-        // $items  = $list->values()->all();
+         $items  = $list->values()->all();
         
-        $items  = $list->values()->forPage(1, 100)->get();
+        //$items  = $list->values()->forPage(1, 100)->get();
 
         // $items->all();
         
