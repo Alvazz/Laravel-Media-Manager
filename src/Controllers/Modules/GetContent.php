@@ -83,7 +83,7 @@ trait GetContent
             }
         }
 
-        foreach ($storageFiles->chunk(100) as $file) {
+        foreach ($storageFiles as $file) {
             $path = $file['path'];
             $time = $file['timestamp'];
 
@@ -138,8 +138,11 @@ trait GetContent
     protected function getFolderListByType($list, $type)
     {
         $list   = collect($list)->where('type', $type);
+        Log::info('list --> : '.$list);
         $sortBy = $list->pluck('basename')->values()->all();
+        Log::info('sortBy --> : '.$sortBy);
         $items  = $list->values()->all();
+        Log::info('items --> : '.$items);
 
         array_multisort($sortBy, SORT_NATURAL, $items);
 
