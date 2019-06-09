@@ -141,14 +141,14 @@ trait GetContent
         Log::info('list --> : '.$list);
         
         // $sortBy = $list->pluck('basename')->values()->all();
-        $sortBy = $list->pluck('basename')->values()->forPage(1, 100);
-        $sortBy->all();
+        $sortBy = $list->pluck('basename')->values()->forPage(1, 100)->get();
+        // $sortBy->all();
 
         // $items  = $list->values()->all();
         
-        $items  = $list->values()->forPage(1, 100);
+        $items  = $list->values()->forPage(1, 100)->get();
 
-        $items->all();
+        // $items->all();
         
         array_multisort($sortBy, SORT_NATURAL, $items);
 
