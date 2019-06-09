@@ -59,43 +59,43 @@ trait GetContent
         $storageFolders = $this->getFolderListByType($dirList, 'dir');
         $pattern        = $this->ignoreFiles;
 
-        foreach ($storageFolders as $folder) {
-            $path = $folder['path'];
-            $time = $folder['timestamp'];
+        // foreach ($storageFolders as $folder) {
+        //     $path = $folder['path'];
+        //     $time = $folder['timestamp'];
 
-            if (!preg_grep($pattern, [$path])) {
-                if ($this->GFI) {
-                    $info = $this->getFolderInfo($path);
-                }
+        //     if (!preg_grep($pattern, [$path])) {
+        //         if ($this->GFI) {
+        //             $info = $this->getFolderInfo($path);
+        //         }
 
-                $list[] = [
-                    'name'                   => $folder['basename'],
-                    'type'                   => 'folder',
-                    'path'                   => $this->resolveUrl($path),
-                    'size'                   => isset($info) ? $info['size'] : 0,
-                    'count'                  => isset($info) ? $info['count'] : 0,
-                    'last_modified'          => $time,
-                    'last_modified_formated' => $this->getItemTime($time),
-                ];
-            }
-        }
+        //         $list[] = [
+        //             'name'                   => $folder['basename'],
+        //             'type'                   => 'folder',
+        //             'path'                   => $this->resolveUrl($path),
+        //             'size'                   => isset($info) ? $info['size'] : 0,
+        //             'count'                  => isset($info) ? $info['count'] : 0,
+        //             'last_modified'          => $time,
+        //             'last_modified_formated' => $this->getItemTime($time),
+        //         ];
+        //     }
+        // }
 
-        foreach ($storageFiles as $file) {
-            $path = $file['path'];
-            $time = $file['timestamp'];
+        // foreach ($storageFiles as $file) {
+        //     $path = $file['path'];
+        //     $time = $file['timestamp'];
 
-            if (!preg_grep($pattern, [$path])) {
-                $list[] = [
-                    'name'                   => $file['basename'],
-                    'type'                   => $file['mimetype'],
-                    'path'                   => $this->resolveUrl($path),
-                    'size'                   => $file['size'],
-                    'visibility'             => $file['visibility'],
-                    'last_modified'          => $time,
-                    'last_modified_formated' => $this->getItemTime($time),
-                ];
-            }
-        }
+        //     if (!preg_grep($pattern, [$path])) {
+        //         $list[] = [
+        //             'name'                   => $file['basename'],
+        //             'type'                   => $file['mimetype'],
+        //             'path'                   => $this->resolveUrl($path),
+        //             'size'                   => $file['size'],
+        //             'visibility'             => $file['visibility'],
+        //             'last_modified'          => $time,
+        //             'last_modified_formated' => $this->getItemTime($time),
+        //         ];
+        //     }
+        // }
 
         return $list;
     }
