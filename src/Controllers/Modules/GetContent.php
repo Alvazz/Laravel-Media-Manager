@@ -140,8 +140,8 @@ trait GetContent
     protected function getFolderListByType($list, $type)
     {
         // $list   = collect($list)->where('type', $type);
-        $list   = collect($list)->where('type', $type)->paginate(100);
-
+        // $list   = collect($list)->where('type', $type)->forPage(1,100);
+        $list   = collect($list)->where('type', $type)->paginate(20);
         // Log::info('list --> : '.$list);
         
         $sortBy = $list->pluck('basename')->values()->all();
