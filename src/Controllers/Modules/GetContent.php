@@ -146,7 +146,7 @@ trait GetContent
         Log::info('getFolderListByType -> curPage'.$curPage);
         // $list   = collect($list)->where('type', $type);
         // $list   = collect($list)->where('type', $type)->forPage(1,100);
-        $list   = collect($list)->where('type', $type)->forPage(1,100);
+        $list   = collect($list)->where('type', $type)->forPage(intval($curPage), 100);
         // Log::info('list --> : '.$list);
         
         $sortBy = $list->pluck('basename')->values()->all();
