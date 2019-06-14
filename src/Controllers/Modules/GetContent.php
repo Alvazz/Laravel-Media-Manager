@@ -17,9 +17,9 @@ trait GetContent
     public function getFiles(Request $request)
     {
         $folder = $request->folder != '/' ? $request->folder : '';
-        Log::info($request);
+        // Log::info($request);
         Log::info($request->currentPage);
-        $curPage = 10;
+        $curPage = $request->currentPage;
 
         if ($folder && !$this->storageDisk->exists($folder)) {
             return response()->json([
