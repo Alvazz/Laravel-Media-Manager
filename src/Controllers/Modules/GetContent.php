@@ -18,6 +18,8 @@ trait GetContent
     {
         $folder = $request->folder != '/' ? $request->folder : '';
 
+        Log::info('currentPage is ->', $request->currentPage);
+
         if ($folder && !$this->storageDisk->exists($folder)) {
             return response()->json([
                 'error' => trans('MediaManager::messages.error.doesnt_exist', ['attr' => $folder]),
@@ -53,11 +55,11 @@ trait GetContent
      *
      * @param mixed $dir
      */
-    protected function getData($dir)
+    protected function getData($dir, $curPage)
     {
         $list           = [];
         $dirList        = $this->getFolderContent($dir);
-        $storageFiles   = $this->getFolderListByType($dirList, 'file');
+        $storageFiles   = $this->getFolderListByType($dirList, 'file', $curPage);
         // dd(count($storageFiles));
         $storageFolders = $this->getFolderListByType($dirList, 'dir');
         $pattern        = $this->ignoreFiles;
@@ -137,8 +139,9 @@ trait GetContent
         ];
     }
 
-    protected function getFolderListByType($list, $type)
+    protected function getFolderListByType($list, $type, $curPage)
     {
+        Log::info('getFolderListByType -> curPage', $curPage);
         // $list   = collect($list)->where('type', $type);
         // $list   = collect($list)->where('type', $type)->forPage(1,100);
         $list   = collect($list)->where('type', $type)->forPage(1,100);
