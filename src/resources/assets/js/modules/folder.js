@@ -2,7 +2,9 @@ export default {
     methods: {
         // navigation
         openFolder(file) {
+            console.log('openFolder + 1');
             if (this.fileTypeIs(file, 'folder')) {
+                
                 this.folders.push(file.name)
                 this.getFiles(this.folders).then(() => {
                     this.updatePageUrl()
@@ -10,6 +12,7 @@ export default {
             }
         },
         goToFolder(index) {
+            console.log('goToFolder + 1');
             if (!this.isBulkSelecting()) {
                 let folders = this.folders
                 let prev_folder_name = folders[index]
@@ -22,6 +25,7 @@ export default {
             }
         },
         goToPrevFolder(e = null, cls = null) {
+            console.log('goToPrevFolder + 1');
             EventHub.fire('stopHammerPropagate')
             let manager = this
 
