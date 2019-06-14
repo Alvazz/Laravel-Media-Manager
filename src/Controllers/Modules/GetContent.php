@@ -18,6 +18,7 @@ trait GetContent
     {
         $folder = $request->folder != '/' ? $request->folder : '';
         Log::info($request);
+        Log::info($request->currentPage);
         $curPage = 10;
 
         if ($folder && !$this->storageDisk->exists($folder)) {
