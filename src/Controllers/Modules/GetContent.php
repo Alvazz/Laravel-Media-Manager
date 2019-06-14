@@ -141,7 +141,7 @@ trait GetContent
     {
         // $list   = collect($list)->where('type', $type);
         // $list   = collect($list)->where('type', $type)->forPage(1,100);
-        $list   = collect($list)->where('type', $type)->paginate(20);
+        $list   = collect($list)->where('type', $type);
         // Log::info('list --> : '.$list);
         
         $sortBy = $list->pluck('basename')->values()->all();
