@@ -18,7 +18,9 @@ trait GetContent
     {
         $folder = $request->folder != '/' ? $request->folder : '';
 
-        Log::info('currentPage is ->', $request->currentPage);
+        $curPage = $request->currentPage;
+
+        Log::info('currentPage is ->'.$request->currentPage);
 
         if ($folder && !$this->storageDisk->exists($folder)) {
             return response()->json([
@@ -31,7 +33,7 @@ trait GetContent
             'dirs'   => $this->getDirectoriesList($request->dirs),
             'files'  => [
                 'path'  => $folder,
-                'items' => $this->getData($folder),
+                'items' => $this->getData($folder, $curPage),
             ],
             'total' => $this->getFolderInfoFromList($folder),
             'current_page' => 1,
@@ -61,7 +63,7 @@ trait GetContent
         $dirList        = $this->getFolderContent($dir);
         $storageFiles   = $this->getFolderListByType($dirList, 'file', $curPage);
         // dd(count($storageFiles));
-        $storageFolders = $this->getFolderListByType($dirList, 'dir');
+        $storageFolders = $this->getFolderListByType($dirList, 'dir', $curPage);
         $pattern        = $this->ignoreFiles;
 
         Log::info('storageFiles count: '.count($storageFiles));
@@ -141,7 +143,7 @@ trait GetContent
 
     protected function getFolderListByType($list, $type, $curPage)
     {
-        Log::info('getFolderListByType -> curPage', $curPage);
+        Log::info('getFolderListByType -> curPage'.$curPage);
         // $list   = collect($list)->where('type', $type);
         // $list   = collect($list)->where('type', $type)->forPage(1,100);
         $list   = collect($list)->where('type', $type)->forPage(1,100);
