@@ -3,6 +3,12 @@ export default {
         // navigation
         openFolder(file) {
             console.log('openFolder + 1');
+            EventHub.fire('showNotif', {
+                title: 'title',
+                body: 'openFolder',
+                type: 'info',
+                duration: 3
+            })
             if (this.fileTypeIs(file, 'folder')) {
                 
                 this.folders.push(file.name)
@@ -13,6 +19,14 @@ export default {
         },
         goToFolder(index) {
             console.log('goToFolder + 1');
+
+            EventHub.fire('showNotif', {
+                title: 'title',
+                body: 'goToFolder',
+                type: 'info',
+                duration: 3
+            })
+
             if (!this.isBulkSelecting()) {
                 let folders = this.folders
                 let prev_folder_name = folders[index]
@@ -25,7 +39,13 @@ export default {
             }
         },
         goToPrevFolder(e = null, cls = null) {
-            console.log('goToPrevFolder + 1');
+            EventHub.fire('showNotif', {
+                title: 'title',
+                body: 'goToPrevFolder',
+                type: 'info',
+                duration: 3
+            })
+
             EventHub.fire('stopHammerPropagate')
             let manager = this
 
