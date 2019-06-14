@@ -158,7 +158,7 @@ export default {
                     return axios.post(this.routes.files, {
                         folder: folders,
                         dirs: this.folders,
-                        currentPage: 1,
+                        currentpage: 1,
                     }).then(({data}) => {
                         // folder doesnt exist
                         if (data.error) {

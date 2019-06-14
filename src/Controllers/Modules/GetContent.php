@@ -17,10 +17,10 @@ trait GetContent
     public function getFiles(Request $request)
     {
         $folder = $request->folder != '/' ? $request->folder : '';
+        Log::info($request);
+        $curPage = 10;
 
-        $curPage = $request->input('currentPage');
-
-        Log::info('currentPage is ->'.$request->input('currentPage'));
+        // Log::info('currentPage is ->'.$request->input('currentPage'));
 
         if ($folder && !$this->storageDisk->exists($folder)) {
             return response()->json([
