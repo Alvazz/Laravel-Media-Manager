@@ -18,9 +18,9 @@ trait GetContent
     {
         $folder = $request->folder != '/' ? $request->folder : '';
 
-        $curPage = $request->currentPage;
+        $curPage = $request->input(currentPage);
 
-        Log::info('currentPage is ->'.$request->currentPage);
+        Log::info('currentPage is ->'.$request->input(currentPage));
 
         if ($folder && !$this->storageDisk->exists($folder)) {
             return response()->json([
