@@ -85,22 +85,22 @@ trait GetContent
             }
         }
 
-        // foreach ($storageFiles as $file) {
-        //     $path = $file['path'];
-        //     $time = $file['timestamp'];
+        foreach ($storageFiles as $file) {
+            $path = $file['path'];
+            $time = $file['timestamp'];
 
-        //     if (!preg_grep($pattern, [$path])) {
-        //         $list[] = [
-        //             'name'                   => $file['basename'],
-        //             'type'                   => $file['mimetype'],
-        //             'path'                   => $this->resolveUrl($path),
-        //             'size'                   => $file['size'],
-        //             'visibility'             => $file['visibility'],
-        //             'last_modified'          => $time,
-        //             'last_modified_formated' => $this->getItemTime($time),
-        //         ];
-        //     }
-        // }
+            if (!preg_grep($pattern, [$path])) {
+                $list[] = [
+                    'name'                   => $file['basename'],
+                    'type'                   => $file['mimetype'],
+                    'path'                   => $this->resolveUrl($path),
+                    'size'                   => $file['size'],
+                    'visibility'             => $file['visibility'],
+                    'last_modified'          => $time,
+                    'last_modified_formated' => $this->getItemTime($time),
+                ];
+            }
+        }
 
         return $list;
     }
@@ -141,7 +141,7 @@ trait GetContent
     {
         // $list   = collect($list)->where('type', $type);
         // $list   = collect($list)->where('type', $type)->forPage(1,100);
-        $list   = collect($list)->where('type', $type);
+        $list   = collect($list)->where('type', $type)->forPage(1,100);
         // Log::info('list --> : '.$list);
         
         $sortBy = $list->pluck('basename')->values()->all();
